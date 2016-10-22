@@ -8,16 +8,7 @@ class HomeController extends Controller
 {
     public function home()
     {
-        $names = [
-            'Neo',
-            'Morpheus',
-            'Tank',
-            'Trinity',
-            'Dozer',
-            'Smith'
-        ];
-        
-        return view('home.home', compact('names'));
+        return view('home.home');
     }
 
     public function about()

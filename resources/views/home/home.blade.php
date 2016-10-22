@@ -1,34 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
-                <div class="panel-body">
-                    @forelse($names as $name)
-                        @if($loop->first)
-                            <li style="color: red">{{ $name }}</li>
-                        @else
-                            <li>{{ $name }}</li>
-                        @endif
-                    @empty
-                        <p>Имен нету</p>
-                    @endforelse
-                </div>
-
-            </div>
-        </div>
+    <div class="page-header">
+        <h1>Sticky footer with fixed navbar</h1>
     </div>
-</div>
-@endsection
-
-
-@section('test')
-    <p>this is a home page</p>
-    @parent
+    <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>body &gt; .container</code>.</p>
+    <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>
 @endsection
 
 
