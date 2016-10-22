@@ -4,6 +4,8 @@
 Route::get('/', ['uses'=>'HomeController@home', 'as' => 'home']);
 Route::get('about', ['uses' => 'HomeController@about', 'as' => 'home.about']);
 
+Route::get('insert', 'DBController@insert');
+Route::get('delete', 'DBController@delete');
 
 
 
