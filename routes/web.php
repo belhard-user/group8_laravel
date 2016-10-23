@@ -6,6 +6,10 @@ Route::get('about', ['uses' => 'HomeController@about', 'as' => 'home.about']);
 
 Route::get('insert', 'DBController@insert');
 Route::get('delete', 'DBController@delete');
+Route::get('update', 'DBController@update');
+Route::get('select', 'DBController@select');
+Route::get('forms', 'DBController@forms');
+Route::post('forms', 'DBController@postForm');
 
 
 
