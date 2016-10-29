@@ -17,6 +17,8 @@ Route::get('update', 'DBController@update');
 Route::get('select', 'DBController@select');
 Route::get('forms', 'DBController@forms');
 Route::post('forms', 'DBController@postForm');
+Route::get('model', 'TestController@model');
+Route::post('model', 'TestController@postModel');
 
 
 

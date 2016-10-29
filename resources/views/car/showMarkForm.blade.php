@@ -6,8 +6,6 @@
 @section('content')
     <form action="{{ route('add-mark-post') }}" method="post">
         {{ csrf_field() }}
-        <input type="hidden" value="{{ \Carbon\Carbon::now() }}" name="created_at">
-        <input type="hidden" value="{{ \Carbon\Carbon::now() }}" name="updated_at">
 
         <select name="brand_id" class="form-control">
             @foreach($brandList as $brandId => $brand)

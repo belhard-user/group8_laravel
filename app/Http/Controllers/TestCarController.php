@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use DB;
+use App\Brand;
+use App\Mark;
+
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -16,27 +18,22 @@ class TestCarController extends Controller
 
     public function addBrands(Request $request)
     {
-        $this->addRecords('brands', $request);
+        Brand::create($request->all());
 
         return redirect()->back();
     }
 
     public function showMarkForm()
     {
-        $brandList = DB::table('brands')->orderBy('title')->pluck('title', 'id');
+        $brandList = Brand::orderBy('title')->pluck('title', 'id');
         
         return view('car.showMarkForm', compact('brandList'));
     }
 
     public function addMark(Request $request)
     {
-        $this->addRecords('marks', $request);
+        Mark::create($request->all());
 
         return redirect()->back();
-    }
-
-    private function addRecords($tblName, Request $request)
-    {
-        return DB::table($tblName)->insert($request->except('_token'));
     }
 }
