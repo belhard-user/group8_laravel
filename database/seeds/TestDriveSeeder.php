@@ -13,7 +13,10 @@ class TestDriveSeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         Testdrive::truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+
         factory(Testdrive::class, 100)->create();
 //        $faker = Factory::create();
 //

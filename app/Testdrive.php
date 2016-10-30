@@ -48,4 +48,14 @@ class Testdrive extends Model
     {
         return strtoupper($this->attributes['email']);
     }
+
+    public function addresses()
+    {
+        return $this->hasMany(\App\Testdrive2::class);
+    }
+    
+    public function addAddress($data)
+    {
+        $this->addresses()->create($data);
+    }
 }

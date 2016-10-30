@@ -20,6 +20,8 @@ Route::post('forms', 'DBController@postForm');
 Route::get('model', 'TestController@model');
 Route::post('model', 'TestController@postModel');
 Route::get('testdrive', 'TestController@testdrive');
+Route::get('relations', 'TestController@relations');
+Route::get('addRelations', 'TestController@addRelations');
 
 
 
