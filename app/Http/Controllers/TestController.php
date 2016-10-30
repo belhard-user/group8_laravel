@@ -65,4 +65,11 @@ class TestController extends Controller
 
         return redirect()->back();
     }
+
+    public function testdrive()
+    {
+        $testdrive = Testdrive::paginate(5);
+        
+        return view('testdrive', ['testdrive' => $testdrive]);
+    }
 }

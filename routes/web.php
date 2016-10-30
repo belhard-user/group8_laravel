@@ -19,6 +19,7 @@ Route::get('forms', 'DBController@forms');
 Route::post('forms', 'DBController@postForm');
 Route::get('model', 'TestController@model');
 Route::post('model', 'TestController@postModel');
+Route::get('testdrive', 'TestController@testdrive');
 
 
 
