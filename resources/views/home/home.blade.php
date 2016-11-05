@@ -1,11 +1,32 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="page-header">
-        <h1>Sticky footer with fixed navbar</h1>
-    </div>
-    <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>body &gt; .container</code>.</p>
-    <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>
+
+    @foreach($items->chunk(3) as $item)
+        <div class="row">
+            @foreach($item as $value)
+                <div class="col-md-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h2>{{ $value->carName }}</h2>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <th>Цвет кузова</th>
+                                    <th>Тип двигателя</th>
+                                </tr>
+                                <tr>
+                                    <td><div class="item-color" style="background-color: {{ $value->color }};"></div></td>
+                                    <td>{{ \App\Mods::$engineType[$value->engine_type] }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    @endforeach
 @endsection
 
 

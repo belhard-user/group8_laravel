@@ -6,6 +6,9 @@ Route::group(['prefix' => 'auto'], function($router){
     
     $router->get('add-marks', ['uses' => 'TestCarController@showMarkForm', 'as' => 'add-mark']);
     $router->post('add-marks', ['uses' => 'TestCarController@addMark', 'as' => 'add-mark-post']);
+
+    $router->get('add', ['uses' => 'UserCar@add', 'as' => 'add.car']);
+    $router->post('add', ['uses' => 'UserCar@store', 'as' => 'store.car']);
 });
 
 Route::get('/', ['uses'=>'HomeController@home', 'as' => 'home']);
