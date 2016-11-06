@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function home()
     {
-        $items = Mods::with('mark', 'mark.brand')->get();
+        $items = Mods::with('mark', 'mark.brand')->paginate(6);
 
         return view('home.home', compact('items'));
     }

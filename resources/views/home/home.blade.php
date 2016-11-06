@@ -27,6 +27,8 @@
             @endforeach
         </div>
     @endforeach
+
+    {!! $items->render() !!}
 @endsection
 
 

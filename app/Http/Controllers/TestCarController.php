@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Brand;
+use App\Http\Requests\BrandRequest;
 use App\Mark;
 
 use Illuminate\Http\Request;
@@ -16,7 +17,7 @@ class TestCarController extends Controller
         return view('car.showForm');
     }
 
-    public function addBrands(Request $request)
+    public function addBrands(BrandRequest $request)
     {
         Brand::create($request->all());
 

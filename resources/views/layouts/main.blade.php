@@ -24,6 +24,7 @@
 
 <div class="container">
     @include('partials.flash')
+    @include('partials.error')
     @yield('content')
     <hr>
 
