@@ -8,7 +8,7 @@
     </div>
 
     <div class="form-group">
-        {!! Form::label('mark_id') !!}
+        {!! Form::label('color') !!}
         {!! Form::input('color', 'color', null, ['class' => 'form-control']) !!}
     </div>
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ModsRequest;
 use App\Mods;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,7 @@ class UserCar extends Controller
         return view('user.add', compact('marksList'));
     }
 
-    public function store(Request $request)
+    public function store(ModsRequest $request)
     {
         Mods::create($request->all());
 
