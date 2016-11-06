@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Mods;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -30,6 +31,10 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    const USER = 1;
+
+    const ADMIN = 2;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -47,4 +52,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function mods()
+    {
+        return $this->hasMany(Mods::class);
+    }
+
+    public function isAdmin()
+    {
+        return $this->role === static::ADMIN;
+    }
 }

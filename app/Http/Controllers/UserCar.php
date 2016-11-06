@@ -19,7 +19,13 @@ class UserCar extends Controller
 
     public function store(ModsRequest $request)
     {
-        Mods::create($request->all());
+        /*$data = array_merge([
+            'user_id' => auth()->id(),
+        ], $request->all());
+        
+        Mods::create($data);*/
+
+        auth()->user()->mods()->create($request->all());
 
         flash('success', 'Авто');
 

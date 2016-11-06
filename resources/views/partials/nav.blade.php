@@ -19,9 +19,13 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-                <li><a href="{{ action('TestCarController@showBrandForm') }}">Добавить Бренд</a></li>
-                <li><a href="{{ route('add-mark') }}">Добавить Марку</a></li>
-                <li><a href="{{ route('add.car') }}">Добавить Объявление</a></li>
+                @if(auth()->check() && auth()->user()->isAdmin())
+                    <li><a href="{{ action('TestCarController@showBrandForm') }}">Добавить Бренд</a></li>
+                    <li><a href="{{ route('add-mark') }}">Добавить Марку</a></li>
+                @endif
+                @if(auth()->check())
+                    <li><a href="{{ route('add.car') }}">Добавить Объявление</a></li>
+                @endif
             </ul>
 
             <!-- Right Side Of Navbar -->
