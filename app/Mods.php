@@ -3,6 +3,8 @@
 namespace App;
 
 use App\Mark;
+use App\Photo;
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Mods extends Model
@@ -32,5 +34,15 @@ class Mods extends Model
     public function getCarNameAttribute()
     {
         return  $this->mark->brand->title . ' ' . $this->mark->title;
+    }
+
+    public function owner()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+    
+    public function photos()
+    {
+        return $this->hasMany(Photo::class);
     }
 }

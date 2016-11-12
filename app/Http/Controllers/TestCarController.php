@@ -6,6 +6,7 @@ use App\Brand;
 use App\Http\Requests\BrandRequest;
 use App\Mark;
 
+use App\Mods;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -36,5 +37,10 @@ class TestCarController extends Controller
         Mark::create($request->all());
 
         return redirect()->back();
+    }
+
+    public function view(Mods $car)
+    {
+        return view('car.view', compact('car'));
     }
 }

@@ -62,4 +62,9 @@ class User extends Authenticatable
     {
         return $this->role === static::ADMIN;
     }
+    
+    public function isOwner(Mods $mods)
+    {
+        return $this->id === $mods->user_id;
+    }
 }

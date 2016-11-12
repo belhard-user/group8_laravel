@@ -8,7 +8,9 @@
                 <div class="col-md-4">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h2>{{ $value->carName }}</h2>
+                            <h2>
+                                <a style="color: white" href="{{ action('TestCarController@view', ['car' => $value->id]) }}">{{ $value->carName }}</a>
+                            </h2>
                         </div>
                         <div class="panel-body">
                             <table class="table">

@@ -13,8 +13,12 @@ Route::group(['prefix' => 'auto'], function($router){
 
     Route::group(['middleware' => ['auth', 'test']], function($router){
         $router->get('add', ['uses' => 'UserCar@add', 'as' => 'add.car']);
+        $router->get('add/{car}/photo', ['uses' => 'UserCar@addPhoto', 'as' => 'add.photo']);
+        $router->post('add/{car}/photo', ['uses' => 'UserCar@storePhoto', 'as' => 'store.photo']);
         $router->post('add', ['uses' => 'UserCar@store', 'as' => 'store.car']);
     });
+
+    $router->get('{car}/view', 'TestCarController@view');
 
 });
 
