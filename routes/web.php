@@ -19,8 +19,10 @@ Route::group(['prefix' => 'auto'], function($router){
     });
 
     $router->get('{car}/view', 'TestCarController@view');
-
 });
+
+Route::put('add/{product}/tocart', ['uses' => 'CartController@add', 'as' => 'cart']);
+Route::get('shop/cart', 'CartController@viewCart');
 
 Route::get('/', ['uses'=>'HomeController@home', 'as' => 'home']);
 Route::get('about', ['uses' => 'HomeController@about', 'as' => 'home.about']);

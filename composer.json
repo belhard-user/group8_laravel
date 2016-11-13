@@ -10,7 +10,8 @@
         "barryvdh/laravel-debugbar": "^2.3",
         "barryvdh/laravel-ide-helper": "^2.2",
         "doctrine/dbal": "^2.5",
-        "laravelcollective/html": "^5.3"
+        "laravelcollective/html": "^5.3",
+        "darryldecode/cart": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

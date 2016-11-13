@@ -39,8 +39,11 @@
                     <h5 class="colors">Цвет:
                         <div style="width: 40px; height: 40px; background-color: {{ $car->color }};"></div>
                     </h5>
-                    <div class="action">
-                        <button class="add-to-cart btn btn-default" type="button">add to cart</button>
+                    <div class="action cart">
+                        {{ Form::open(['route' => ['cart', 'id' => $car->id], 'method' => 'PUT' ]) }}
+                            <button class="add-to-cart btn btn-default" type="submit">add to cart</button>
+                        {{ Form::close() }}
+                        <button class="add-to-cart btn btn-default" id="ajax" type="button">test ajax</button>
                     </div>
                 </div>
             </div>
@@ -50,4 +53,23 @@
             @include('partials.uploadform', ['car' => $car])
         @endcan
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+    <script>
+        $("#ajax").on('click', function(){
+            $.ajax({
+                url: '/shop/cart'
+            }).done(function(responce){
+                var content = $('.cart');
+                for(var prop in responce){
+                    $('<li>', {
+                        text: responce[prop].name
+                    }).appendTo(content);
+                }
+                // console.log(responce);
+            }).error(function(){
+
+            });
+        });
+    </script>
 @stop
