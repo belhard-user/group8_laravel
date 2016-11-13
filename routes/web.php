@@ -1,5 +1,15 @@
 <?php
 
+
+/*app('foo');
+app('foo', ['AA', 'BB']);
+app('foo', ['AAA', 'BBB']);*/
+
+
+Route::get('test', function(){
+    Foo::test()->test2();
+});
+
 Route::group(['prefix' => 'auto'], function($router){
     
     Route::group(['middleware' => ['auth', 'admin']], function($router){
